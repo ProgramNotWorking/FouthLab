@@ -14,7 +14,6 @@ public:
     ~Tetrahedron();
     double searchSquare() override;
     double searchVolume() override;
-    double getBaseSideSize();
 };
 
 

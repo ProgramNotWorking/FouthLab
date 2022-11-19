@@ -13,5 +13,3 @@ double Tetrahedron::searchSquare() {
 double Tetrahedron::searchVolume() {
     return (pow(baseSideSize, 3) * sqrt(2)) / 12;
 }
-
-double Tetrahedron::getBaseSideSize() { return baseSideSize; }

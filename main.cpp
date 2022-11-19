@@ -19,7 +19,7 @@ int main() {
         double height;
         cout << "Enter base side size: ";
         cin >> baseSideSize;
-        cout << "Enter height size: ";
+        cout << "Enter sideFacetSize size: ";
         cin >> height;
 
         Prism prism(baseSideSize, height);
@@ -39,7 +39,7 @@ int main() {
         double upperBaseSideSize;
         cout << "Enter base side size: ";
         cin >> baseSideSize;
-        cout << "Enter height size: ";
+        cout << "Enter sideFacetSize size: ";
         cin >> height;
         cout << "Enter upper base side size: ";
         cin >> upperBaseSideSize;
@@ -47,5 +47,6 @@ int main() {
         TruncatedTetrahedron truncatedTetrahedron(baseSideSize, height, upperBaseSideSize);
         cout << "Ur truncated tetrahedron square: " << truncatedTetrahedron.searchSquare() << endl;
         cout << "Ur truncated tetrahedron volume: " << truncatedTetrahedron.searchVolume() << endl;
+        cout << "Ur truncated tetrahedron base's coefficient: " << truncatedTetrahedron.searchCoefficient() << endl;
     } else return 0;
 }

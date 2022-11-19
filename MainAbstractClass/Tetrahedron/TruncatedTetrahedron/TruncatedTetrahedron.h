@@ -7,14 +7,16 @@
 
 class TruncatedTetrahedron : public Tetrahedron {
 private:
+    double baseSideSize;
     double upperBaseSideSize;
-    double height;
+    double sideFacetSize;
 
 public:
-    TruncatedTetrahedron(double baseSideSize, double height, double upperBaseSideSize);
+    TruncatedTetrahedron(double baseSideSize, double sideFacetSize, double upperBaseSideSize);
     ~TruncatedTetrahedron();
     double searchSquare() override;
     double searchVolume() override;
+    double searchCoefficient();
 };
 
 
