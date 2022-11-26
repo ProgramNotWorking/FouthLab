@@ -9,19 +9,34 @@ TruncatedTetrahedron::TruncatedTetrahedron(double baseSideSize, double sideFacet
 TruncatedTetrahedron::~TruncatedTetrahedron() = default;
 
 double TruncatedTetrahedron::searchSquare() {
-    double apothem = sqrt(pow(sideFacetSize, 2) - pow(baseSideSize / 4, 2));
-    return 1 / 2 * (3 * baseSideSize + 3 * upperBaseSideSize) * apothem;
+    double apothem = sqrt(pow(sideFacetSize, 2) - pow((baseSideSize - upperBaseSideSize), 2) / 4);
+    return 3.0 / 2.0 * (baseSideSize + upperBaseSideSize) * apothem;
 }
 
 double TruncatedTetrahedron::searchVolume() {
-    double downBaseSquare = (pow(baseSideSize, 2) * sqrt(3)) / 4;
-    double upperBaseSquare = (pow(upperBaseSideSize, 2) * sqrt(3)) / 4;
-    double apothem = sqrt(pow(sideFacetSize, 2) - pow(baseSideSize / 4, 2));
-    int height = sqrt(pow(apothem, 2) - pow((sqrt(3) / 6) * (baseSideSize - upperBaseSquare), 2));
-
-    return 1 / 3 * height * (downBaseSquare + upperBaseSquare + sqrt(downBaseSquare * upperBaseSquare));
+    double auxiliaryHeight = sqrt(pow(sideFacetSize, 2) - pow((baseSideSize - upperBaseSideSize), 2));
+    return 1.0 / 6.0 * auxiliaryHeight * (sqrt(3) * (pow(baseSideSize, 2) + pow(upperBaseSideSize, 2) / 2)
+        + baseSideSize * upperBaseSideSize * sqrt(sqrt(3) / 2));
 }
 
 double TruncatedTetrahedron::searchCoefficient() {
     return upperBaseSideSize / baseSideSize;
+}
+
+double TruncatedTetrahedron::setBaseSideSize() {
+    cout << "Enter base side size: ";
+    cin >> baseSideSize;
+    return baseSideSize;
+}
+
+double TruncatedTetrahedron::setSideFacetSize() {
+    cout << "Enter side facet size: ";
+    cin >> sideFacetSize;
+    return sideFacetSize;
+}
+
+double TruncatedTetrahedron::setUpperBaseSideSize() {
+    cout << "Enter upper base side size: ";
+    cin >> upperBaseSideSize;
+    return upperBaseSideSize;
 }

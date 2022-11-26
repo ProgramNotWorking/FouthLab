@@ -1,15 +1,17 @@
 #ifndef FOUTHLAB_MAINABSTRACTCLASS_H
 #define FOUTHLAB_MAINABSTRACTCLASS_H
 
-#include <iostream>
-#include <string>
-
-using namespace std;
 
 class MainAbstractClass {
+protected:
+    double baseSideSize;
+    double height;
+    double sideFacetSize;
+    double upperBaseSideSize;
+
 public:
-    virtual double searchSquare();
-    virtual double searchVolume();
+    virtual double searchSquare() = 0;
+    virtual double searchVolume() = 0;
 };
 
 

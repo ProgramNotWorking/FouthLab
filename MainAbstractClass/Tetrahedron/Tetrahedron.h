@@ -3,17 +3,18 @@
 
 #include "../MainAbstractClass.h"
 
+#include <iostream>
 #include <cmath>
 
-class Tetrahedron : public MainAbstractClass {
-private:
-    double baseSideSize;
+using namespace std;
 
+class Tetrahedron : public MainAbstractClass {
 public:
     Tetrahedron(double baseSideSize);
     ~Tetrahedron();
     double searchSquare() override;
     double searchVolume() override;
+    double setBaseSideSize();
 };
 
 

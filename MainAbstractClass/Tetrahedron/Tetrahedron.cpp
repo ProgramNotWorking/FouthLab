@@ -13,3 +13,9 @@ double Tetrahedron::searchSquare() {
 double Tetrahedron::searchVolume() {
     return (pow(baseSideSize, 3) * sqrt(2)) / 12;
 }
+
+double Tetrahedron::setBaseSideSize() {
+    cout << "Enter base side size: ";
+    cin >> baseSideSize;
+    return baseSideSize;
+}
