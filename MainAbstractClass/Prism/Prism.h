@@ -11,6 +11,7 @@ using namespace std;
 class Prism : public MainAbstractClass {
 public:
     Prism(double baseSideSize, double height);
+    Prism();
     ~Prism();
     double searchSquare() override;
     double searchVolume() override;

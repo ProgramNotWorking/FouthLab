@@ -5,6 +5,11 @@ Prism::Prism(double baseSideSize, double height) {
     this->height = height;
 }
 
+Prism::Prism() {
+    searchSquare();
+    searchVolume();
+}   // ??
+
 Prism::~Prism() = default;
 
 double Prism::searchSquare() {

@@ -11,6 +11,7 @@ using namespace std;
 class Tetrahedron : public MainAbstractClass {
 public:
     Tetrahedron(double baseSideSize);
+    Tetrahedron();
     ~Tetrahedron();
     double searchSquare() override;
     double searchVolume() override;
