@@ -9,14 +9,18 @@
 using namespace std;
 
 class Prism : public MainAbstractClass {
+private:
+    double height{0};
+
 public:
     Prism(double baseSideSize, double height);
+    Prism(const Prism &someObj);
     Prism();
     ~Prism();
+    void setBaseSideSize(double baseSideSize);
     double searchSquare() override;
     double searchVolume() override;
-    double setBaseSideSize();
-    double setHeight();
+    void setHeight();
 };
 
 

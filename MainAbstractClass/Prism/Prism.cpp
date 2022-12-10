@@ -5,29 +5,29 @@ Prism::Prism(double baseSideSize, double height) {
     this->height = height;
 }
 
+Prism::Prism(const Prism &someObj) : MainAbstractClass(someObj) {
+    this->height = someObj.height;
+}
+
 Prism::Prism() {
-    searchSquare();
-    searchVolume();
-}   // ??
+    this->height = 0;
+}
 
 Prism::~Prism() = default;
 
+void Prism::setBaseSideSize(double baseSideSize) {
+    MainAbstractClass::baseSideSize = baseSideSize;
+}
+
 double Prism::searchSquare() {
-    return baseSideSize * 3 * height;
+    return getBaseSideSize() * 3 * height;
 }
 
 double Prism::searchVolume() {
-    return (pow(baseSideSize, 2) * sqrt(3)) / 4;
+    return (pow(getBaseSideSize(), 2) * sqrt(3)) / 4;
 }
 
-double Prism::setBaseSideSize() {
-    cout << "Enter base side size: ";
-    cin >> baseSideSize;
-    return baseSideSize;
-}
-
-double Prism::setHeight() {
+void Prism::setHeight() {
     cout << "Enter height: ";
     cin >> height;
-    return height;
 }

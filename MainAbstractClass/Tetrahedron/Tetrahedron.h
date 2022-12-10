@@ -11,11 +11,12 @@ using namespace std;
 class Tetrahedron : public MainAbstractClass {
 public:
     Tetrahedron(double baseSideSize);
+    Tetrahedron(const Tetrahedron &someObj);
     Tetrahedron();
     ~Tetrahedron();
+    virtual void setBaseSideSize(double baseSideSize);
     double searchSquare() override;
     double searchVolume() override;
-    double setBaseSideSize();
 };
 
 

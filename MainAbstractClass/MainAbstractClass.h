@@ -4,14 +4,15 @@
 
 class MainAbstractClass {
 protected:
-    double baseSideSize;
-    double height;
-    double sideFacetSize;
-    double upperBaseSideSize;
+    double baseSideSize{};
+//    double height;
+//    double sideFacetSize;
+//    double upperBaseSideSize;
 
 public:
     virtual double searchSquare() = 0;
     virtual double searchVolume() = 0;
+    double getBaseSideSize() const;
 };
 
 

@@ -4,15 +4,21 @@
 #include "../Tetrahedron.h"
 
 class TruncatedTetrahedron : public Tetrahedron {
+private:
+    double upperBaseSideSize;
+    double sideFacetSize;
+
 public:
     TruncatedTetrahedron(double baseSideSize, double sideFacetSize, double upperBaseSideSize);
+    TruncatedTetrahedron(const TruncatedTetrahedron &someObj);
+    TruncatedTetrahedron();
     ~TruncatedTetrahedron();
+    void setBaseSideSize(double baseSideSize) override;
     double searchSquare() override;
     double searchVolume() override;
     double searchCoefficient();
-    double setBaseSideSize();
-    double setSideFacetSize();
-    double setUpperBaseSideSize();
+    void setSideFacetSize();
+    void setUpperBaseSideSize();
 };
 
 
