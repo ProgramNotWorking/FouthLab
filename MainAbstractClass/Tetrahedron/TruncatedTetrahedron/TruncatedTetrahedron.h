@@ -5,8 +5,8 @@
 
 class TruncatedTetrahedron : public Tetrahedron {
 private:
-    double upperBaseSideSize;
-    double sideFacetSize;
+    double upperBaseSideSize{0};
+    double sideFacetSize{0};
 
 public:
     TruncatedTetrahedron(double baseSideSize, double sideFacetSize, double upperBaseSideSize);

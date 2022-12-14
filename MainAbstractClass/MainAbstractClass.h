@@ -5,9 +5,6 @@
 class MainAbstractClass {
 protected:
     double baseSideSize{};
-//    double height;
-//    double sideFacetSize;
-//    double upperBaseSideSize;
 
 public:
     virtual double searchSquare() = 0;
